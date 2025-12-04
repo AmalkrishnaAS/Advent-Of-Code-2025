@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <regex>
 #include <sstream>
 #include <vector>
 #include <utility>
@@ -7,6 +8,8 @@
 #include <vector>
 
 using namespace std;
+
+
 
 vector<pair<long long , long long  >> parseInput(string path) {
     vector<pair<long long, long long >> ranges;
@@ -57,13 +60,32 @@ long long solve (vector<pair<long long  , long long >> &ranges) {
 }
 return ans;
 }
+long long solve2_regex (vector<pair<long long  , long long >> &ranges) {
+    long long ans=0;
+    for(auto &range:ranges) {
+       long long start= range.first;
+       long long end=range.second;
+        
+    for(long long i=start;i<=end;i++) {
+        string value = to_string(i);
+        regex pattern(R"((\d+)\1+)");
+        if(regex_match(value,pattern)) ans+=stoll(value);
+
+        
+    }
+    
+}
+return ans;
+}
 
 int  main() {
     std::vector<pair<long long,long long  >> ranges = parseInput("input.txt");
     // for(auto &range:ranges) {
     //     cout<<range.first<<" "<<range.second<<endl;
     // }
-    long long ans = solve(ranges);
-    cout<<ans;
+    long long ans = solve2_regex(ranges);
+    cout<<ans<<endl;
+    
+
     return 0;
 }

@@ -39,17 +39,33 @@ int getMax(string line) {
     return value;
 }
 
+long long getMax2(string line) {
+    int DIGITS=12;
+    int n=DIGITS;
+    
+    
+    long long value = 0;
+    auto it1=line.begin()-1;
+    while (n--) {
+    it1=max_element(it1+1,line.begin()+(line.length()-n));
+    value  = value*10+(*it1-48);
+    }
+    // cout<<value<<endl;
+    return value;
+}
+
+
 long long solve (vector<string>&lines ) {
-    int ans=0;
+    unsigned long long  ans=0;
     for(auto &line:lines) {
-        ans+=getMax(line);
+        ans+=getMax2(line);
     }
     return ans;
 }
 int main() {
     
     vector<string> lines =parseInput("input.txt");
-    long long ans  = solve(lines);
+    unsigned long long ans  = solve(lines);
     cout<<ans<<endl;
     return 0;
 }
