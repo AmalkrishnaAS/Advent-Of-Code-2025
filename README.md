@@ -13,6 +13,7 @@ My solutions for [Advent of Code 2025](https://adventofcode.com/2025) in C++.
 | [Day 2](02/) | [Day 2: Gift Shop](https://adventofcode.com/2025/day/2) | [solution.cpp](02/solution.cpp) | [input](02/input.txt) |
 | [Day 3](03/) | [Day 3: Lobby](https://adventofcode.com/2025/day/3) | [solution.cpp](03/solution.cpp) | [input](03/input.txt) |
 | [Day 4](04/) | [Day 4: Printing Department](https://adventofcode.com/2025/day/4) | [solution.cpp](04/solution.cpp) | [input](04/input.txt) |
+| [Day 5](05/) | [Day 5: Cafeteria](https://adventofcode.com/2025/day/5) | [solution.cpp](05/solution.cpp) | [input](05/input.txt) |
 
 ## 📂 Structure
 
