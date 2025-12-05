@@ -45,7 +45,10 @@ int solve(vector<string> &grid) {
             if(g=='@') curr++;
             if(h=='@') curr++;
             
-            if(curr<4) {ans++;cache.push_back(make_pair(i, j));}
+            if(curr<4) {ans++;
+                //the additional step for p2
+                cache.push_back(make_pair(i, j));
+            }
 
             
         }
