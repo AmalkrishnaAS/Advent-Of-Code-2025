@@ -15,13 +15,13 @@
 
 ---
 
-## � About
+##  About
 
-Advent of Code is an annual set of Christmas-themed computer programming challenges that follow an Advent calendar. It has been running since 2015. The puzzles unlock daily at midnight EST/UTC-5 from December 1st to December 25th.
+Advent of Code is an annual set of Christmas-themed computer programming challenges that follow an Advent calendar. It has been running since 2015. The puzzles unlock daily at midnight EST/UTC-5 from December 1st to December 12th.
 
 This repository contains my personal solutions, written in **C++**, focusing on efficiency and clean code.
 
-## �📅 Progress
+## 📅 Progress
 
 | Day | Challenge | Solution |
 |:---:|:----------|:--------:|
