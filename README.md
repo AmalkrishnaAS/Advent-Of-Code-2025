@@ -25,12 +25,12 @@ This repository contains my personal solutions, written in **C++**, focusing on 
 
 | Day | Challenge | Solution |
 |:---:|:----------|:--------:|
-| 01 | [Secret Entrance](https://adventofcode.com/2025/day/1) | [solution.cpp](01/solution.cpp) |
-| 02 | [Gift Shop](https://adventofcode.com/2025/day/2) | [solution.cpp](02/solution.cpp) |
-| 03 | [Lobby](https://adventofcode.com/2025/day/3) | [solution.cpp](03/solution.cpp) |
-| 04 | [Printing Department](https://adventofcode.com/2025/day/4) | [solution.cpp](04/solution.cpp) |
-| 05 | [Cafeteria](https://adventofcode.com/2025/day/5) | [solution.cpp](05/solution.cpp) |
-| 06 | [Trash Compactor](https://adventofcode.com/2025/day/6) | [solution.cpp](06/solution.cpp) |
+| 01 | [Secret Entrance](https://adventofcode.com/2025/day/1) | [Solution](01/) |
+| 02 | [Gift Shop](https://adventofcode.com/2025/day/2) | [Solution](02/) |
+| 03 | [Lobby](https://adventofcode.com/2025/day/3) | [Solution](03/) |
+| 04 | [Printing Department](https://adventofcode.com/2025/day/4) | [Solution](04/) |
+| 05 | [Cafeteria](https://adventofcode.com/2025/day/5) | [Solution](05/) |
+| 06 | [Trash Compactor](https://adventofcode.com/2025/day/6) | [Solution](06/) |
 
 ## 📂 Structure
 
