@@ -1,3 +1,4 @@
+#include <algorithm>
 #define ll long long
 #include <fstream>
 #include <iostream>
@@ -60,9 +61,45 @@ ll solve(InputVectors input ) {
     return ans;
 }
 
+vector<pair<ll, ll>> mergeRanges(vector<pair<ll, ll>> &ranges) {
+    vector<pair<ll, ll>> merged;
+    sort(ranges.begin(),ranges.end());
+    merged.push_back(make_pair(ranges[0].first, ranges[0].second));
+    
+    //ranges: [3-5 3-7 4-8 10-12 ]
+    // merged: [ 3-5 ]
+    for(int i=1;i<ranges.size();i++) {
+        pair<ll, ll> last = merged[merged.size()-1];
+        if(ranges[i].first<=last.second) {
+            merged[merged.size()-1].first=min(ranges[i].first,last.first);
+            merged[merged.size()-1].second=max(ranges[i].second,last.second);
+        } else {
+            merged.push_back(ranges[i]);
+        }
+    }
+    // for(auto &it:merged) {
+    //     cout<<it.first<<","<<it.second<<endl;
+    // }
+    return merged;
+    
+}
+
+ll solve2(InputVectors input ) {
+    ll ans = 0;
+    vector<pair<ll, ll>> ranges = input.ranges;
+    ranges =mergeRanges(ranges);
+    vector<ll> values = input.values;
+   for(auto &it:ranges) {
+       ans+=(it.second-it.first+1);
+   }
+    
+    return ans;
+}
+
 int main() {
     InputVectors input = parseInput("input.txt");
-    ll  ans=solve(input);
+    ll  ans=solve2(input);
+    //mergeRanges(input.ranges);
     cout<<ans<<endl;
     return 0;
 }

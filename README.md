@@ -1,41 +1,75 @@
 # 🎄 Advent of Code 2025 🎄
 
-![Language](https://img.shields.io/badge/Language-C++-blue.svg)
-![Event](https://img.shields.io/badge/Event-Advent%20of%20Code%202025-red.svg)
+<div align="center">
 
-My solutions for [Advent of Code 2025](https://adventofcode.com/2025) in C++.
+![Language](https://img.shields.io/badge/Language-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Event](https://img.shields.io/badge/Event-Advent%20of%20Code%202025-FFD700?style=for-the-badge&logo=adventofcode&logoColor=black)
 
-## 📅 Progress
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-| Day | Challenge | Solution | Input |
-|:---:|:----------|:--------:|:-----:|
-| [Day 1](01/) | [Day 1: Secret Entrance](https://adventofcode.com/2025/day/1) | [solution.cpp](01/solution.cpp) | [input](01/input.txt) |
-| [Day 2](02/) | [Day 2: Gift Shop](https://adventofcode.com/2025/day/2) | [solution.cpp](02/solution.cpp) | [input](02/input.txt) |
-| [Day 3](03/) | [Day 3: Lobby](https://adventofcode.com/2025/day/3) | [solution.cpp](03/solution.cpp) | [input](03/input.txt) |
-| [Day 4](04/) | [Day 4: Printing Department](https://adventofcode.com/2025/day/4) | [solution.cpp](04/solution.cpp) | [input](04/input.txt) |
-| [Day 5](05/) | [Day 5: Cafeteria](https://adventofcode.com/2025/day/5) | [solution.cpp](05/solution.cpp) | [input](05/input.txt) |
+**My solutions for [Advent of Code 2025](https://adventofcode.com/2025) implemented in C++.**
+
+[About](#-about) • [Progress](#-progress) • [Structure](#-structure) • [Usage](#-usage)
+
+</div>
+
+---
+
+## � About
+
+Advent of Code is an annual set of Christmas-themed computer programming challenges that follow an Advent calendar. It has been running since 2015. The puzzles unlock daily at midnight EST/UTC-5 from December 1st to December 25th.
+
+This repository contains my personal solutions, written in **C++**, focusing on efficiency and clean code.
+
+## �📅 Progress
+
+| Day | Challenge | Solution |
+|:---:|:----------|:--------:|
+| 01 | [Secret Entrance](https://adventofcode.com/2025/day/1) | [solution.cpp](01/solution.cpp) |
+| 02 | [Gift Shop](https://adventofcode.com/2025/day/2) | [solution.cpp](02/solution.cpp) |
+| 03 | [Lobby](https://adventofcode.com/2025/day/3) | [solution.cpp](03/solution.cpp) |
+| 04 | [Printing Department](https://adventofcode.com/2025/day/4) | [solution.cpp](04/solution.cpp) |
+| 05 | [Cafeteria](https://adventofcode.com/2025/day/5) | [solution.cpp](05/solution.cpp) |
 
 ## 📂 Structure
 
-Each day's solution is in its own directory (`01/`, `02/`, etc.) containing:
-- `solution.cpp` - The C++ solution source code.
-- `input.txt` - The puzzle input file.
-- `sample.txt` - Sample input from the problem description.
-- `a.out` - Compiled binary (included in the repository).
+The repository is organized by day. Each directory contains the solution source code, input files, and the compiled binary.
 
-## 🚀 Building and Running
+```text
+📦 adventofcode-2025
+ ┣ 📂 01
+ ┃ ┣ 📜 input.txt
+ ┃ ┣ 📜 sample.txt
+ ┃ ┗ 📜 solution.cpp
+ ┣ 📂 02
+ ┃ ┗ ...
+ ┗ 📜 README.md
+```
 
-To build and run a solution, navigate to the day's directory and run the following commands:
+## 🛠️ Usage
+
+### Prerequisites
+
+- A C++ compiler (e.g., `g++`, `clang++`) supporting C++17 or later.
+
+### Running a Solution
+
+Navigate to the specific day's directory and compile the solution.
 
 ```bash
+# Navigate to the day's folder (e.g., Day 1)
+cd 01
+
 # Compile the solution
-g++ solution.cpp -o solution
+g++ -std=c++17 solution.cpp -o solution
 
 # Run the solution
-# Note: The solution reads directly from 'input.txt' in the current directory.
 ./solution
 ```
 
+> **Note**: The solutions are designed to read from `input.txt` located in the same directory. Ensure the file exists before running.
+
 ## 📜 License
 
-This repository is for personal use in solving Advent of Code 2025 challenges. All problem statements, inputs, and designs are the property of [Advent of Code](https://adventofcode.com).
+This project is licensed under the MIT License.
+Advent of Code puzzles and inputs are property of [Advent of Code](https://adventofcode.com).
