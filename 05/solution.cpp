@@ -66,8 +66,14 @@ vector<pair<ll, ll>> mergeRanges(vector<pair<ll, ll>> &ranges) {
     sort(ranges.begin(),ranges.end());
     merged.push_back(make_pair(ranges[0].first, ranges[0].second));
     
-    //ranges: [3-5 3-7 4-8 10-12 ]
+    //ranges: [3-5 //3-7 4-8 10-12 ]
     // merged: [ 3-5 ]
+    // ranges: [3-5 3-7 //4-8 10-12 ]
+    // merged: [3-7 ]
+    // ranges: [3-5 3-7 4-8 // 10-12 ]
+    // merged:[3-8]
+    // ranges: [3-5 3-7 4-8 10-12 // ]
+    // merged: [ 3-8 10-12] ->return
     for(int i=1;i<ranges.size();i++) {
         pair<ll, ll> last = merged[merged.size()-1];
         if(ranges[i].first<=last.second) {

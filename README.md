@@ -30,6 +30,7 @@ This repository contains my personal solutions, written in **C++**, focusing on 
 | 03 | [Lobby](https://adventofcode.com/2025/day/3) | [solution.cpp](03/solution.cpp) |
 | 04 | [Printing Department](https://adventofcode.com/2025/day/4) | [solution.cpp](04/solution.cpp) |
 | 05 | [Cafeteria](https://adventofcode.com/2025/day/5) | [solution.cpp](05/solution.cpp) |
+| 06 | [Trash Compactor](https://adventofcode.com/2025/day/6) | [solution.cpp](06/solution.cpp) |
 
 ## 📂 Structure
 
