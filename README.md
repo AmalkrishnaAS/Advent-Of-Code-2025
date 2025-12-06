@@ -36,14 +36,19 @@ This repository contains my personal solutions, written in **C++**, focusing on 
 
 The repository is organized by day. Each directory contains the solution source code, input files, and the compiled binary.
 
+For days where the solution for Part 2 requires a different approach or significant changes, the directory is split into `part1` and `part2`.
+
 ```text
 📦 adventofcode-2025
  ┣ 📂 01
  ┃ ┣ 📜 input.txt
  ┃ ┣ 📜 sample.txt
  ┃ ┗ 📜 solution.cpp
- ┣ 📂 02
- ┃ ┗ ...
+ ┣ 📂 06
+ ┃ ┣ 📂 part1
+ ┃ ┃ ┗ 📜 solution.cpp
+ ┃ ┗ 📂 part2
+ ┃   ┗ 📜 solution.cpp
  ┗ 📜 README.md
 ```
 
@@ -60,6 +65,8 @@ Navigate to the specific day's directory and compile the solution.
 ```bash
 # Navigate to the day's folder (e.g., Day 1)
 cd 01
+# If the day is split into parts, navigate to the specific part
+# cd part1
 
 # Compile the solution
 g++ -std=c++17 solution.cpp -o solution
