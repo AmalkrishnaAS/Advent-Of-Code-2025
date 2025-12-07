@@ -1,3 +1,4 @@
+#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 #define ll long long 
@@ -9,6 +10,7 @@ struct Input {
     vector<string> grid;
     int start;
 };
+
 
 Input parseInput(string path) {
     ifstream f(path);
@@ -58,8 +60,23 @@ ll solve(Input input) {
     
      return ans;
 }
+
+ll solve2(vector<string> &grid,int row,int col,vector<vector<ll>> &memo) {
+    if(row==grid.size()) return 1;  //reached the bottom ; valid timeline
+    if(col==grid[0].size() || col==-1) return 0; // went out of the grid before it reached the bottom , invalid
+    
+    if(memo[row][col]!=-1) return memo[row][col];
+    
+    if(grid[row][col]=='.') return memo[row+1][col]=solve2(grid, row+1, col,memo); //just move straight down
+    else {
+        memo[row+1][col+1]= solve2(grid, row+1, col+1,memo);
+        memo[row+1][col-1]= solve2(grid, row+1, col-1,memo);
+        return memo[row+1][col+1]+memo[row+1][col-1]; // spawn two rays
+    }
+    
+}
 int main() {
-    Input input=parseInput("input.txt");
+    Input input=parseInput("sample.txt");
     // cout<<"start : "<<input.start<<endl;
     // for(auto &s:input.grid) {
     //     for(auto &c:s) {
@@ -68,6 +85,11 @@ int main() {
     // }
         //cout<<endl;
     ll ans=solve(input);
+    // cout<<ans<<endl;
+    unordered_set<int> curr,next;
+    vector<vector<ll>> memo(input.grid.size() + 1, vector<ll>(input.grid[0].size(), -1));
+    curr.insert(input.start);    
+    ans= solve2(input.grid,1,input.start,memo);
     cout<<ans<<endl;
     return 0;
 }
