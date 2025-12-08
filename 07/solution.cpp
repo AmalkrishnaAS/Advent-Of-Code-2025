@@ -76,7 +76,7 @@ ll solve2(vector<string> &grid,int row,int col,vector<vector<ll>> &memo) {
     
 }
 int main() {
-    Input input=parseInput("sample.txt");
+    Input input=parseInput("input.txt");
     // cout<<"start : "<<input.start<<endl;
     // for(auto &s:input.grid) {
     //     for(auto &c:s) {
@@ -87,7 +87,7 @@ int main() {
     ll ans=solve(input);
     // cout<<ans<<endl;
     unordered_set<int> curr,next;
-    vector<vector<ll>> memo(input.grid.size() + 1, vector<ll>(input.grid[0].size(), -1));
+    vector<vector<ll>> memo(input.grid.size()+1, vector<ll>(input.grid[0].size(), -1));
     curr.insert(input.start);    
     ans= solve2(input.grid,1,input.start,memo);
     cout<<ans<<endl;
