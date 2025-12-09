@@ -31,10 +31,10 @@ class Dsu {
             return parent[el]=findParent(parent[el]);
         }
     }
-    void unite(ll u,ll v) {
+    bool unite(ll u,ll v) {
         ll ru=findParent(u);
         ll rv =findParent(v);
-        if(ru==rv) return;
+        if(ru==rv) return false;
         if(size[ru]>size[rv]) {
             parent[rv]=ru;
             size[ru]+=size[rv];
@@ -44,6 +44,7 @@ class Dsu {
             parent[ru]=rv;
             size[rv]+=size[ru];
         }
+        return true;
     }
     
     vector<ll> getSize() {
@@ -104,18 +105,22 @@ int main() {
     //     cout<<el.first<<endl;
         
     // }    
-    
+    pair<ll,ll> lastMerge;
     ll count=1000;
     Dsu dsu = Dsu(points.size());
     for(auto &el:pairDist) {
-        if(!count) break;
-        dsu.unite(el.second.first, el.second.second);
+        //if(!count) break;
+        bool success= dsu.unite(el.second.first, el.second.second);
+        if(success) lastMerge= make_pair(el.second.first, el.second.second);
         count--;
         
     }
+    
+    ll p2=points[lastMerge.first][0]*points[lastMerge.second][0];
+    cout<<"part 2:"<<p2<<endl;
     vector<ll> sizes=dsu.getSize();
     sort(sizes.begin(),sizes.end(),greater<ll>());
     //cout<<sizes[0]<<" "<<sizes[1]<<" "<<sizes[2]<<endl;
-    cout<< sizes[0]*sizes[1]*sizes[2]<<endl;
+    //cout<< sizes[0]*sizes[1]*sizes[2]<<endl;
     
 }
