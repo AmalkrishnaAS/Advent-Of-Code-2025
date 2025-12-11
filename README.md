@@ -34,6 +34,7 @@ This repository contains my personal solutions, written in **C++**, focusing on 
 | 07 | [Laboratories](https://adventofcode.com/2025/day/7) | [Solution](07/) |
 | 08 | [Playground](https://adventofcode.com/2025/day/8) | [Solution](08/) |
 | 09 | [Movie Theater](https://adventofcode.com/2025/day/9) | [Solution](09/) |
+| 10 | [Factory](https://adventofcode.com/2025/day/10) | [Solution](10/) |
 
 ## 📂 Structure
 
