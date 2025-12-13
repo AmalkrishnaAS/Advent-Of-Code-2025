@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <iterator>
@@ -11,6 +12,8 @@
 #define ll long long 
 
 using namespace std;
+
+unordered_map<string , ll> memo;
 bool starts_with(string s,string prefix) {
     return s.compare(0,prefix.size(),prefix)==0;
 } 
@@ -41,6 +44,26 @@ unordered_map<string, vector<string>> parseInput(string path) {
     
     f.close();
     return m;
+}
+
+ll dfs(unordered_map<string , vector<string>> &adj,vector<string> &currPath,string start,string req1,string req2,string tgt,bool f1,bool f2) {
+    if(start=="fft") f1=true;
+    if(start=="dac") f2=true;
+    string key = start +"|" + (f1?"true":"false")+"|"+(f2?"true":"false");
+    if(memo.count(key)) return memo[key];
+    if(start==tgt) {
+        // currPath.pop_back();
+        if(f1 && f2) return true;
+    }
+    ll total =0;
+    if(adj.count(start)) {
+        for(auto &v:adj[start]) {
+            currPath.push_back(v);
+            total+=dfs(adj,currPath,v,req1,req2,tgt,f1,f2);
+            currPath.pop_back();
+        }
+    }
+    return memo[key]=total;
 }
 
 void printInput(unordered_map<string,vector<string>> adj) {
@@ -79,7 +102,8 @@ ll bfs(unordered_map<string, vector<string>> adj,string start) {
 int main() {
     unordered_map<string, vector<string>> adj =parseInput("input.txt");
     // printInput(adj);
-    ll ans= bfs(adj,"you");
+    vector<string> currPath;
+    ll ans= dfs(adj,currPath,"svr","fft","dac","out",false,false);
     cout<<ans<<endl;
     
   
